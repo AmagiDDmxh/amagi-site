@@ -1,5 +1,5 @@
-import type { MdxFile, PageMapItem } from 'nextra'
-import type { BlogFrontMatter } from '../types'
+import type { MdxFile, PageMapItem } from 'nextra/types'
+import type { BlogFrontMatter } from 'nextra-theme-blog'
 
 export function split(tags: string | string[] = ''): string[] {
   return (Array.isArray(tags) ? tags : tags.split(',')).map(s => s.trim())

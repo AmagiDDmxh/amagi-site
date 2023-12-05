@@ -1,4 +1,4 @@
-import type { PageMapItem } from 'nextra'
+import type { PageMapItem } from 'nextra/types'
 
 // BFS traverse the page map tree
 export default function traverse(

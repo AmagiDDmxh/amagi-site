@@ -1,5 +1,5 @@
-import type { Folder, MdxFile } from 'nextra'
-import type { LayoutProps } from '../types'
+import type { Folder, MdxFile } from 'nextra/types'
+import type { LayoutProps } from 'nextra-theme-blog'
 import traverse from './traverse'
 
 export const getParent = ({ opts }: LayoutProps) => {
