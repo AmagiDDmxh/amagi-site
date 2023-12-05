@@ -8,8 +8,6 @@ import { DEFAULT_THEME } from './constants'
 import { PageLayout } from './page-layout'
 import { PostsLayout } from './posts-layout'
 
-import './styles/styles.css'
-
 const layoutMap = {
   post: ArticleLayout,
   page: PageLayout,
