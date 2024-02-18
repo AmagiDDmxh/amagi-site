@@ -1,8 +1,8 @@
-import Head from "next/head"
-import type { ReactNode } from "react"
-import { useEffect, useRef, useState } from "react"
-import { useBlogContext } from "./blog-context"
-import { HeadingContext } from "./mdx-theme"
+import Head from "next/head";
+import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useBlogContext } from "./blog-context";
+import { HeadingContext } from "./mdx-theme";
 // import { Quote as QuoteType } from "@/types/quote"
 
 // const trimAllContentIf = (obj: QuoteType): QuoteType => {
@@ -41,7 +41,7 @@ import { HeadingContext } from "./mdx-theme"
 //   if (!content) {
 //     return
 //   }
-  
+
 //   return (
 //     <li className="flex flex-col border-b !mb-6">
 //       <p className="p-0">“{content}“</p>
@@ -54,9 +54,9 @@ import { HeadingContext } from "./mdx-theme"
 // }
 
 export const BasicLayout = ({ children }: { children: ReactNode }) => {
-  const { config, opts } = useBlogContext()
-  const title = `${opts.title}${config.titleSuffix || ""}`
-  const ref = useRef<HTMLHeadingElement>(null)
+  const { config, opts } = useBlogContext();
+  const title = `${opts.title}${config.titleSuffix || ""}`;
+  const ref = useRef<HTMLHeadingElement>(null);
   // const [quote, setQuote] = useState<QuoteType>()
 
   // useEffect(() => {
@@ -77,6 +77,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
         <title>{title}</title>
         {config.head?.({ title, meta: opts.frontMatter })}
       </Head>
+
       <HeadingContext.Provider value={ref}>
         {opts.hasJsxInH1 ? <h1 ref={ref} /> : null}
         {opts.hasJsxInH1 ? null : <h2>{opts.title}</h2>}
@@ -84,10 +85,14 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
 
         {children}
 
+        <hr />
+        <p>
+          最近在看：《禅与摩托车维修艺术》、《善的脆弱性》、《爱的多重奏》
+        </p>
         <div className="flex justify-between items-start mt-32">
           {config.footer}
         </div>
       </HeadingContext.Provider>
     </article>
-  )
-}
+  );
+};
