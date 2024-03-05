@@ -87,7 +87,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
 
         <hr />
         <p>
-          最近在看：《禅与摩托车维修艺术》、《善的脆弱性》、《爱的多重奏》
+          最近在看：&lsquo;on writing well&rsquo; 和 &lsquo;writing to learn&rsquo;
         </p>
         <div className="flex justify-between items-start mt-32">
           {config.footer}
