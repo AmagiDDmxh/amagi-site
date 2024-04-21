@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import type { ReactElement } from 'react'
-import { split } from '@/lib/get-tags'
-import { getParent } from '@/lib/parent'
-import { useBlogContext } from './blog-context'
-import ThemeSwitch from './theme-switch'
+import Link from "next/link";
+import type { ReactElement } from "react";
+import { split } from "@/lib/get-tags";
+import { getParent } from "@/lib/parent";
+import { useBlogContext } from "./blog-context";
+import ThemeSwitch from "./theme-switch";
 
 export default function Meta(): ReactElement {
-  const { opts, config } = useBlogContext()
-  const { author, date, tag } = opts.frontMatter
-  const { back } = getParent({ opts, config })
-  const tags = tag ? split(tag) : []
+  const { opts, config } = useBlogContext();
+  const { author, date, tag } = opts.frontMatter;
+  const { back } = getParent({ opts, config });
+  const tags = tag ? split(tag) : [];
 
-  const tagsEl = tags.map(t => (
+  const tagsEl = tags.map((t) => (
     <Link key={t} href="/tags/[tag]" as={`/tags/${t}`} passHref legacyBehavior>
       <a
         className="
@@ -28,26 +28,26 @@ export default function Meta(): ReactElement {
           dark:text-gray-300
           dark:hover:bg-gray-700
           dark:hover:text-gray-200
+          !no-underline
         "
       >
         {t}
       </a>
     </Link>
-  ))
+  ));
 
-  const readingTime = opts.readingTime?.text
-  const dateObj = date ? new Date(date) : null
+  const readingTime = opts.readingTime?.text;
+  const dateObj = date ? new Date(date) : null;
   return (
     <div
       className={
-        'mb-8 flex gap-3 ' +
-        (readingTime ? 'items-start' : 'items-center')
+        "mb-8 flex gap-3 " + (readingTime ? "items-start" : "items-center")
       }
     >
-      <div className="grow dark:text-gray-400 text-gray-600">
+      <div className="grow dark:text-gray-400 text-gray-600 meta">
         <div className="not-prose flex flex-wrap items-center gap-1">
           {author}
-          {author && date && ','}
+          {author && date && ","}
           {dateObj && (
             <time dateTime={dateObj.toISOString()}>
               {config.dateFormatter?.(dateObj) || dateObj.toDateString()}
@@ -64,7 +64,7 @@ export default function Meta(): ReactElement {
           </div>
         )}
       </div>
-      <div className="flex items-center gap-3 print:hidden">
+      <div className="flex items-center gap-2 print:hidden">
         {back && (
           <Link href={back} passHref legacyBehavior>
             <a>Back</a>
@@ -73,5 +73,5 @@ export default function Meta(): ReactElement {
         {config.darkMode && <ThemeSwitch />}
       </div>
     </div>
-  )
+  );
 }

@@ -1,8 +1,10 @@
 import Head from "next/head";
 import type { ReactNode } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useBlogContext } from "./blog-context";
 import { HeadingContext } from "./mdx-theme";
+import { AudioProvider } from "./(audio)/audio-provider";
+import { AudioPlayer } from "./(audio)/audio-player";
 // import { Quote as QuoteType } from "@/types/quote"
 
 // const trimAllContentIf = (obj: QuoteType): QuoteType => {
@@ -85,11 +87,7 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
 
         {children}
 
-        <hr />
-        <p>
-          最近在看：&lsquo;on writing well&rsquo; 和 &lsquo;writing to learn&rsquo;
-        </p>
-        <div className="flex justify-between items-start mt-32">
+        <div className="flex justify-between items-start">
           {config.footer}
         </div>
       </HeadingContext.Provider>

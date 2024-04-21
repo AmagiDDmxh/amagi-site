@@ -13,10 +13,9 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <span
-      role="button"
+    <button
       aria-label="Toggle Dark Mode"
-      className="cursor-pointer p-2 text-current"
+      className="p-2 group relative rounded-md hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 dark:hover:bg-neutral-800 dark:focus:ring-neutral-600 md:order-none"
       tabIndex={0}
       onClick={toggleTheme}
       onKeyDown={e => {
@@ -24,6 +23,6 @@ export default function ThemeSwitch() {
       }}
     >
       {mounted && isDark ? <MoonIcon /> : <SunIcon />}
-    </span>
+    </button>
   )
 }

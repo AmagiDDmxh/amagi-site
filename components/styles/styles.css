@@ -1,12 +1,18 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-@import './variables.css';
-@import './code-block.css';
-@import './subheading-anchor.css';
-@import './scrollbar.css';
-@import './steps.css';
-@import './cards.css';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./variables.css";
+@import "./code-block.css";
+@import "./subheading-anchor.css";
+@import "./scrollbar.css";
+@import "./steps.css";
+@import "./cards.css";
+
+html,
+body {
+  @apply antialiased;
+  text-rendering: optimizeLegibility;
+}
 
 html {
   @apply scroll-pt-5;
@@ -28,6 +34,14 @@ h1 {
   letter-spacing: -0.03em;
 }
 
+body {
+  overscroll-behavior: none;
+}
+
+::selection {
+  @apply bg-neutral-700 text-neutral-50;
+}
+
 .prose code {
   &:before,
   &:after {
@@ -44,4 +58,40 @@ h1 {
 
 .footnotes a[data-footnote-backref] {
   font-family: initial;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.prose {
+  line-height: 1.6;
+  word-spacing: -0.04em;
+}
+
+.prose-sm {
+  font-size: 0.875rem;
+  line-height: 1.7142857;
+}
+
+.prose a,
+a {
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: all;
+  text-decoration-skip-ink: all;
+  -webkit-text-decoration-color: #85969d;
+  text-decoration-color: #85969d;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  text-decoration-thickness: from-font;
+  transition: opacity 0.2s ease;
+}
+
+.meta {
+  color: rgb(156 163 175);
+}
+
+article.md\:prose h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.4em;
 }

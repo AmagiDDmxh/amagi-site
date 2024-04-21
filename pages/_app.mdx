@@ -1,12 +1,18 @@
-import { Analytics } from '@vercel/analytics/react'
-import "@/components/styles/styles.css"
+import Script from 'next/script'
+import { Analytics } from "@vercel/analytics/react";
+import { inter } from "@/lib/fonts";
+import "@/components/styles/styles.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <main className={`font-sans ${inter.className}`}>
       <Component {...pageProps} />
       <Analytics />
-      <script defer data-domain="amagi.love" src="https://plausible.io/js/script.js"></script>
-    </>
-  )
+      <Script
+        defer
+        data-domain="amagi.love"
+        src="https://plausible.io/js/script.js"
+      />
+    </main>
+  );
 }

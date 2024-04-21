@@ -1,4 +1,5 @@
-const colors = require("tailwindcss/colors")
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 const makePrimaryColor =
   (l) =>
@@ -6,8 +7,8 @@ const makePrimaryColor =
     return (
       `hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) ${l}%` +
       (opacityValue ? ` / ${opacityValue})` : ")")
-    )
-  }
+    );
+  };
 
 /** @type {import('tailwindcss').Config} */
 const docsConfig = {
@@ -15,7 +16,7 @@ const docsConfig = {
     "./components/**/*.tsx",
     "./app/**/*.tsx",
     "./pages/**/*.tsx",
-    "./theme.config.jsx"
+    "./theme.config.jsx",
   ],
   theme: {
     screens: {
@@ -46,7 +47,7 @@ const docsConfig = {
       black: "#000",
       white: "#fff",
       gray: colors.gray,
-      slate: colors.slate,
+      neutral: colors.neutral,
       neutral: colors.neutral,
       red: colors.red,
       orange: colors.orange,
@@ -73,7 +74,7 @@ const docsConfig = {
     },
   },
   darkMode: ["class", 'html[class~="dark"]'],
-}
+};
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -117,6 +118,9 @@ module.exports = {
           },
         },
       }),
+      fontFamily: {
+        sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   variants: {
@@ -126,4 +130,4 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography")],
   darkMode: docsConfig.darkMode,
-}
+};
