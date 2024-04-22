@@ -121,7 +121,7 @@ export function Slider(props: SliderProps) {
       >
         <div
           className={clsxm(
-            "h-2 rounded-bl-lg md:rounded-bl-xl",
+            "h-2 rounded-bl-lg md:rounded-l-xl",
             state.getThumbValue(0) === 1 && 'rounded-r-lg md:rounded-r-md',
             isFocusVisible || state.isThumbDragging(0)
               ? "bg-neutral-900 dark:bg-neutral-200"
