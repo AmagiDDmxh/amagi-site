@@ -20,10 +20,10 @@ const themConfig = {
         </a>
       </div>
 
-      <p>
+      {/* <p>
         最近在看：&lsquo;on writing well&rsquo; 和 &lsquo;writing to
         learn&rsquo;
-      </p>
+      </p> */}
       <small className="block">
         <abbr
           title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
