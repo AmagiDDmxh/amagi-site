@@ -8,7 +8,7 @@ import { DEFAULT_THEME } from "./constants";
 import { PageLayout } from "./page-layout";
 import { PostsLayout } from "./posts-layout";
 import { AudioProvider } from "./(audio)/audio-provider";
-import { AudioPlayer } from "./(audio)/audio-player";
+// import { AudioPlayer } from "./(audio)/audio-player";
 
 const layoutMap = {
   post: ArticleLayout,

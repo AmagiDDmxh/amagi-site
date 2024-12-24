@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { TextureLoader, Mesh, Group, Color } from "three";
+import { TextureLoader, Mesh, Group } from "three";
 import { OrbitControls } from "@react-three/drei";
 
 interface LeafProps {
@@ -92,16 +92,16 @@ export function Leaves() {
 
   return (
     <>
-      <div className="absolute right-0 top-0 z-[-1] h-screen w-[60vw] bg-gradient-to-r from-white to-transparent"></div>
+      <div className="absolute right-0 top-0 z-[-1] h-screen w-[60vw]" />
 
       <div className="absolute right-0 top-0 z-[-2]">
         <Canvas
           camera={{ position: [0, 0, 7], fov: 35 }}
           gl={{ antialias: true }}
-          onCreated={({ gl }) => {
-            gl.setClearColor(new Color(1, 1, 1), 1);
+          style={{
+            width: "60vw",
+            height: "100vh",
           }}
-          style={{ width: "60vw", height: "100vh" }}
           onError={() => setHasWebGLError(true)} // Add error handler
           fallback={null} // Add fallback
         >
