@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 import { useRef } from "react";
 import { useBlogContext } from "./blog-context";
 import { HeadingContext } from "./mdx-theme";
-import { AudioProvider } from "./(audio)/audio-provider";
-import { AudioPlayer } from "./(audio)/audio-player";
+// import { AudioProvider } from "./(audio)/audio-provider";
+// import { AudioPlayer } from "./(audio)/audio-player";
+import { Leaves } from "./ui/leaves";
 // import { Quote as QuoteType } from "@/types/quote"
 
 // const trimAllContentIf = (obj: QuoteType): QuoteType => {
@@ -87,10 +88,10 @@ export const BasicLayout = ({ children }: { children: ReactNode }) => {
 
         {children}
 
-        <div className="flex justify-between items-start">
-          {config.footer}
-        </div>
+        <div className="flex justify-between items-start">{config.footer}</div>
       </HeadingContext.Provider>
+
+      <Leaves />
     </article>
   );
 };
