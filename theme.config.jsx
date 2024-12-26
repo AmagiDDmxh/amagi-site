@@ -31,7 +31,7 @@ const themConfig = {
         >
           CC BY-NC 4.0
         </abbr>
-        <time className="ml-1">2023</time> © Amagi.
+        <time className="ml-1">2023</time> © Amagi. ᕕ( ᐛ )ᕗ
       </small>
     </div>
   ),
